@@ -1,0 +1,98 @@
+[
+  {
+    "model": "cars.car",
+    "pk": 1,
+    "fields": {
+
+      "model": "M4",
+      "max_speed": "200 km/h",
+      "description": "The car for a tour",
+      "car_image1": "bmwm4.jpg",
+      "car_image2": "",
+      "car_image3": "",
+      "car_image4": "",
+      "buy_date": "2019-10-10",
+      "transmission": "Manual",
+      "carburant": "Essence",
+      "consumption": "4.5L / 100",
+      "price_categories": ""
+    }
+  },
+    {
+    "model": "cars.car",
+    "pk": 2,
+    "fields": {
+
+      "model": "i8",
+      "max_speed": "300 km/h",
+      "description": "The car for rich",
+      "car_image1": "Bmwi8.jpg",
+      "car_image2": "",
+      "car_image3": "",
+      "car_image4": "",
+      "buy_date": "2012-10-01",
+      "transmission": "Auto",
+      "carburant": "Essence",
+      "consumption": "4.5L / 100",
+      "price_categories": ""
+    }
+  },
+    {
+    "model": "cars.car",
+    "pk": 3,
+    "fields": {
+
+      "model": "Panamera Turbo",
+      "max_speed": "300 km/h",
+      "description": "The car for i dont know",
+      "car_image1": "PorschePanameraTurbo.jpeg",
+      "car_image2": "",
+      "car_image3": "",
+      "car_image4": "",
+      "buy_date": "2014-4-1",
+      "transmission": "Manual",
+      "carburant": "Essence",
+      "consumption": "4.5L / 100",
+      "price_categories": ""
+    }
+  },
+      {
+    "model": "cars.car",
+    "pk": 4,
+    "fields": {
+
+      "model": "CLA 45 AMG",
+      "max_speed": "200 km/h",
+      "description": "The car for a hobbit",
+      "car_image1": "MercedesCla45Amg.jpg",
+      "car_image2": "",
+      "car_image3": "",
+      "car_image4": "",
+      "buy_date": "1115-4-20",
+      "transmission": "Manual",
+      "carburant": "Essence",
+      "consumption": "4.5L / 100",
+      "price_categories": ""
+    }
+  },
+      {
+    "model": "cars.car",
+    "pk": 5,
+    "fields": {
+
+      "model": "C200 4matic",
+      "max_speed": "300 km/h",
+      "description": "The car for gandalf",
+      "car_image1": "c200.jpg",
+      "car_image2": "",
+      "car_image3": "",
+      "car_image4": "",
+      "buy_date": "2025-11-22",
+      "transmission": "Manual",
+      "carburant": "Essence",
+      "consumption": "4.5L / 100",
+      "price_categories": ""
+    }
+  }
+]
+

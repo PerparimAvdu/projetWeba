@@ -1,0 +1,102 @@
+{% extends 'home/header.html' %}
+<!-- when no reservation is made from the customer the responsive on phone bug -->
+<!-- this template belong to hanefi -->
+{% block content %}
+
+<div class="row">
+    <div class="col s12 m7 l4 xl4">
+      <div class="card white black-text">
+        <div class="card-content">
+            <span class="card-title">Customer: {{customer.name}}</span>
+
+            <div class="card-action center">
+
+                <a href="{% url 'customer:user_settings' customer.id %}" class="btn white black-text waves-effect waves-green">Update Customer</a>
+
+                <a href="{% url 'reservations_management:delete_customer_from_admin' customer.id %}" class="btn white black-text waves-effect waves-green">Delete Customer</a>
+
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l4 xl4">
+      <div class="card white black-text">
+        <div class="card-content">
+            <span class="card-title">Contact Information</span>
+            <hr>
+            <p>Email: {{customer.email}}</p>
+            <p>Phone: {{customer.phone}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s6 m7 l4 xl4">
+      <div class="card cyan black-text">
+        <div class="card-content">
+          <span class="card-title">Total Reservations</span>
+          <p>{{reservation_count}}</p>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col s12 m12 l12 xl12">
+      <div class="card white black-text">
+        <div class="card-content">
+            <span class="card-title">Reservation details</span>
+            <table class="table responsive-table highlight">
+                <thead class="blue">
+                    <tr>
+                        <th>Car</th>
+                        <th>Hours | kms | price</th>
+                        <th>Date Reserved</th>
+                        <th>Status</th>
+                        <th>Note</th>
+                        <th>Update</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for reservation in reservations %}
+                        <tr>
+                            <td>{{reservation.car}}</td>
+                            <td>{{reservation.hours_kms_price}}</td>
+                            <td>{{reservation.date_location_start}}</td>
+                            <td>{{reservation.status}}</td>
+                            <td>{{reservation.note}}</td>
+                            <td><a class="btn white black-text waves-effect waves-green" href="{% url 'reservations_management:update_reservation_from_admin_1' reservation.id %}">Update</a></td>
+                            <td><a class="btn white black-text waves-effect waves-red" href="{% url 'reservations_management:delete_reservation_from_admin' reservation.id %}">Delete</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12 m7 l7 xl4 offset-xl4">
+      <div class="card white black-text">
+        <div class="card-content">
+          <span class="card-title">Search with the filter</span>
+          <form method="get" onsubmit="myButton.disabled=true;return true;">
+
+            {% csrf_token %}
+            {{myFilter.form.as_p}}
+
+            <div class="card-action">
+                <button class="btn white black-text waves-effect waves-green" type="submit" name="myButton">Search</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endblock %}

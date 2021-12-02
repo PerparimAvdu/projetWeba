@@ -1,0 +1,26 @@
+{% extends 'home/header.html' %}
+<!-- this template belong to adam -->
+{% block content %}
+
+<div class="row container">
+    <div class="col s10 m8 l8 xl12">
+      <div class="card white darken-1">
+        <div class="card-content black-text">
+            <span class="card-title center">Update Car</span>
+            <form method="post" onsubmit="myButton.disabled=true;return true;" class="underline_for_modelform_text">
+            {% csrf_token %}
+            {{form.as_p}}
+
+            <div class="card-action">
+            <button type="submit" class="btn white black-text waves-effect waves-green" name="myButton">Update</button>
+
+            <a href="{% url 'cars:all_cars' %}" class="btn white black-text waves-effect waves-green">Cancel</a>
+            </div>
+
+            </form>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endblock content %}

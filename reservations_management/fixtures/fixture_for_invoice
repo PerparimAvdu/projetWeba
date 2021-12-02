@@ -1,0 +1,13 @@
+[
+  {
+    "model": "reservations_management.invoice",
+    "pk": 1,
+    "fields": {
+      "status": "Canceled",
+      "note": "this client is not good",
+      "date_location_start": "2021-10-10",
+      "hours_kms_price": "6h 200 kms 250 Chf"
+    }
+  }
+
+]

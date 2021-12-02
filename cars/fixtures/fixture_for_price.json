@@ -1,0 +1,144 @@
+[
+  {
+    "model": "cars.price",
+    "pk": 1,
+    "fields": {
+      "car_price": 220
+    }
+  },
+    {
+    "model": "cars.price",
+    "pk": 2,
+    "fields": {
+      "car_price": 420
+    }
+  },
+    {
+    "model": "cars.price",
+    "pk": 3,
+    "fields": {
+      "car_price": 300
+    }
+  },
+    {
+    "model": "cars.price",
+    "pk": 4,
+    "fields": {
+      "car_price": 560
+    }
+  },
+    {
+    "model": "cars.price",
+    "pk": 5,
+    "fields": {
+      "car_price": 520
+    }
+  },
+    {
+    "model": "cars.price",
+    "pk": 6,
+    "fields": {
+      "car_price": 980
+    }
+  },
+    {
+    "model": "cars.price",
+    "pk": 7,
+    "fields": {
+      "car_price": 750
+    }
+  },
+    {
+    "model": "cars.price",
+    "pk": 8,
+    "fields": {
+      "car_price": 1400
+    }
+  },
+    {
+    "model": "cars.price",
+    "pk": 9,
+    "fields": {
+      "car_price": 1350
+    }
+  },
+    {
+    "model": "cars.price",
+    "pk": 10,
+    "fields": {
+      "car_price": 2520
+    }
+  },
+      {
+    "model": "cars.price",
+    "pk": 11,
+    "fields": {
+      "car_price": 180
+    }
+  },
+      {
+    "model": "cars.price",
+    "pk": 12,
+    "fields": {
+      "car_price": 300
+    }
+  },
+      {
+    "model": "cars.price",
+    "pk": 13,
+    "fields": {
+      "car_price": 250
+    }
+  },
+      {
+    "model": "cars.price",
+    "pk": 14,
+    "fields": {
+      "car_price": 400
+    }
+  },
+      {
+    "model": "cars.price",
+    "pk": 15,
+    "fields": {
+      "car_price": 420
+    }
+  },
+      {
+    "model": "cars.price",
+    "pk": 16,
+    "fields": {
+      "car_price": 700
+    }
+  },
+      {
+    "model": "cars.price",
+    "pk": 17,
+    "fields": {
+      "car_price": 600
+    }
+  },
+      {
+    "model": "cars.price",
+    "pk": 18,
+    "fields": {
+      "car_price": 1000
+    }
+  },
+      {
+    "model": "cars.price",
+    "pk": 19,
+    "fields": {
+      "car_price": 990
+    }
+  },
+      {
+    "model": "cars.price",
+    "pk": 20,
+    "fields": {
+      "car_price": 1650
+    }
+  }
+
+]
+

@@ -1,0 +1,35 @@
+{% extends './header.html' %}
+{% load static %}
+<!-- this template belong to adam -->
+{% block content %}
+
+<div class="row container">
+    <div class="col s12 m12 l12 xl12">
+      <div class="card">
+        <table>
+          <tr>
+              <h4 style="padding-left:3%">Welcome to <strong>44Location.</strong></h4></th>
+              <th style="width:400px;padding-right:5%;padding-left:0%" ><em>Qu'il s'agisse d'un Week-end à la montagne entre amis,
+                  un mariage ou un vidéo-clip nos véhicules sont à votre disposition pour tout type d'événements</em></th>
+          </tr>
+        </table>
+
+        <div class="card-image">
+          <img src="{% static '/images/aboutuss.jpg' %}" class="responsive-img">
+          <span class="card-title"></span>
+        </div>
+
+        <div class="card-content white black-text">
+          <table>
+              <tr>
+                  <td><em>Dans le marché de l'automobile, nous sommes constamment à la recherche de nouveaux véhicules à la hauteur de vos attentes.
+                      Suivez toute notre actualité sur Instagram et Facebook !</em></td>
+                  <td><em>Avec la collaboration de nos partenaires, nous avons également sponsorisé certains de nos clients lors d'événements automobiles.</em></td>
+              </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% endblock content %}

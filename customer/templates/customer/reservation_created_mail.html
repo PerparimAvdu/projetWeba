@@ -1,0 +1,32 @@
+<!-- this template belong to hanefi -->
+
+<h2>A new reservation demand has been created from {{customer}}</h2>
+
+<h3>Reservation details:</h3>
+<p>
+    <table>
+
+        <thead>
+            <tr>
+                <th>Customer name</th>
+                <th>Choosen car</th>
+                <th>Date and time of the location</th>
+                <th>Hours, kms and price</th>
+                <th>Comment</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>{{customer.name}}</td>
+                <td>{{car}}</td>
+                <td>{{date_location}}</td>
+                <td>{{hours_kms_price}}</td>
+                <td>{{note}}</td>
+                <td>Pending</td>
+            </tr>
+        </tbody>
+    </table>
+</p>
+

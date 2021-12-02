@@ -1,0 +1,84 @@
+[
+  {
+    "model": "cars.price_category",
+    "pk": 1,
+    "fields": {
+      "hours": "4h",
+      "kms": "150 kms"
+    }
+  },
+    {
+    "model": "cars.price_category",
+    "pk": 2,
+    "fields": {
+      "hours": "4h",
+      "kms": "illimited kms"
+    }
+  },
+    {
+    "model": "cars.price_category",
+    "pk": 3,
+    "fields": {
+      "hours": "6h",
+      "kms": "200 kms"
+    }
+  },
+    {
+    "model": "cars.price_category",
+    "pk": 4,
+    "fields": {
+      "hours": "6h",
+      "kms": "illimited kms"
+    }
+  },
+    {
+    "model": "cars.price_category",
+    "pk": 5,
+    "fields": {
+      "hours": "12h",
+      "kms": "350 kms"
+    }
+  },
+      {
+    "model": "cars.price_category",
+    "pk": 6,
+    "fields": {
+      "hours": "12h",
+      "kms": "illimited kms"
+    }
+  },
+      {
+    "model": "cars.price_category",
+    "pk": 7,
+    "fields": {
+      "hours": "24h",
+      "kms": "500 kms"
+    }
+  },
+    {
+    "model": "cars.price_category",
+    "pk": 8,
+    "fields": {
+      "hours": "24h",
+      "kms": "illimited kms"
+    }
+  },
+    {
+    "model": "cars.price_category",
+    "pk": 9,
+    "fields": {
+      "hours": "Week-end",
+      "kms": "900 kms"
+    }
+  },
+    {
+    "model": "cars.price_category",
+    "pk": 10,
+    "fields": {
+      "hours": "Week-end",
+      "kms": "illimited kms"
+    }
+  }
+
+]
+

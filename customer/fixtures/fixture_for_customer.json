@@ -1,0 +1,63 @@
+[
+  {
+    "model": "customer.customer",
+    "pk": 1,
+    "fields": {
+      "name": "Johny",
+      "phone": "02340234",
+      "email": "Lennon@hotmail.com"
+    }
+  },
+
+    {
+    "model": "customer.customer",
+    "pk": 2,
+    "fields": {
+      "name": "Bernard",
+      "phone": "5534663",
+      "email": "Bernard@hotmail.com"
+    }
+  },
+
+    {
+    "model": "customer.customer",
+    "pk": 3,
+    "fields": {
+      "name": "Luc",
+      "phone": "3456734",
+      "email": "Luc@hotmail.com"
+    }
+  },
+
+    {
+    "model": "customer.customer",
+    "pk": 4,
+    "fields": {
+      "name": "Jimmy",
+      "phone": "346643",
+      "email": "Jimmy@hotmail.com"
+    }
+  },
+
+    {
+    "model": "customer.customer",
+    "pk": 5,
+    "fields": {
+      "name": "Maximus",
+      "phone": "4353456",
+      "email": "Maximus@hotmail.com"
+    }
+  },
+
+    {
+    "model": "customer.customer",
+    "pk": 6,
+    "fields": {
+      "name": "Sylvanas",
+      "phone": "634677",
+      "email": "Sylvanas@hotmail.com"
+    }
+  }
+
+]
+

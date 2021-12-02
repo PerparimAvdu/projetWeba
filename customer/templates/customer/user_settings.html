@@ -1,0 +1,44 @@
+{% extends 'home/header.html' %}
+{% load static %}
+<!-- this template belong to perparim -->
+{% block content %}
+
+<div class="row container">
+
+    <div class="col s12 m5 l5 xl3">
+      <div class="card white">
+        <div class="card-image">
+          <img src="{{customer.profileURL}}" class="responsive-img">
+        </div>
+        <div class="card-content black-text center">
+            <p>Account settings</p>
+
+            <div class="card-action">
+                <a href="{% url 'customer:delete_account_from_customer' customer.id %}" class="btn white black-text waves-effect waves-red">Delete account</a>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m7 l7 xl9">
+      <div class="card white">
+        <div class="card-content">
+          <span class="card-title center">Personal infos</span>
+          <form method="post" action="" enctype="multipart/form-data" class="white-text" onsubmit="myButton.disabled=true; return true;">
+              {% csrf_token %}
+              {{form.as_p}}
+
+              <div class="card-action">
+                  <input class="btn white black-text waves-effect waves-green" type="submit" name="myButton" value="Confirm">
+              </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+{% endblock %}
+           

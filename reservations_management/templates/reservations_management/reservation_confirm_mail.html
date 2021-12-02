@@ -1,0 +1,26 @@
+<!-- this template belong to hanefi -->
+
+<h3>Good morning {{customer}},</h3>
+
+<p>You will find bellow the resume on your reservation:</p>
+<p>
+    car : {{car}} <br>
+    Date of location : {{date_location}} <br>
+    Status : {{status}} <br>
+    Your car options selections : {{hours_kms_price}} <br>
+    {% if note %}
+        Personal comment : {{note}}
+    {% endif %}
+</p>
+
+<p>
+    The paiement should be done before taking the car. We Thank you in advance to bring your driving licence. <br>
+    If you have any questions you can contact us at this mail : test@gmail.com <br>
+    Or on this number 044 44 44 44 <br><br>
+    Best regards, <br>
+    Team 44Location
+</p>
+
+<p>
+    You are receiving this mail because you demanded a reservation to rent a car at 44Location.ch
+</p>

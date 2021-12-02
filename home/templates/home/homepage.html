@@ -1,0 +1,96 @@
+{% extends './header.html' %}
+{% load static %}
+<!-- this template belong to hanefi -->
+{% block content %}
+
+<div class="slider col s12 m12 l12 xl12">
+    <ul class="slides">
+        {% for car in cars %}
+        <li>
+            <img src="{{car.image1}}" class="responsive-img">
+            <div class="caption center-align">
+                <h4 id="home_model_car">{{car.model}}</h4>
+                {% if not user.is_staff %}
+                    <a href="{% url 'customer:create_reservation_from_customer' car_pk=car.pk %}" class="btn waves-effect waves-darkgreen green" id="reserve_button_homepage">Reserve</a>
+                {% endif %}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+<h2 class="center white-text darken-4">Promotion of the week.</h2>
+
+<div class="row container">
+    <div class="col s12 m12 l12 xl6 offset-xl3">
+        <div class="card white" id="promotion_car">
+            <div class="card-content black-text">
+                {% for car in cars %}
+                    {% if car.model == 'i8' %}
+
+                        <div class="card-image" >
+                            <img src="{{car.image1}}" class="responsive-img">
+                        </div>
+
+                        <br>
+
+                        <p>{{car.model}}</p>
+
+                        <div class="card-action">
+                            {% if not user.is_staff %}
+                                <a href="{% url 'customer:create_reservation_from_customer' car_pk=car.pk %}" class="btn white black-text waves-effect waves-green">Reserve</a>
+                            {% endif %}
+                            <a href="{% url 'cars:car_detail' car.pk %}" class="btn white black-text waves-effect waves-green">Details</a>
+
+                        <!-- Modal Trigger -->
+<!--                        <a class="btn white black-text waves-effect waves-green modal-trigger" href="#modal1">Details</a>-->
+
+                        <!-- Modal Structure -->
+<!--                        <div id="modal1" class="modal">-->
+<!--                            <div class="modal-content">-->
+<!--                                <h4>{{car}}</h4>-->
+<!--                                <p>{{car.description|safe}}</p>-->
+<!--                                <p>{{car.max_speed}}</p>-->
+<!--                                <p>{{car.transmission}}</p>-->
+<!--                                <p>{{car.consumption}}</p>-->
+<!--                                <p>{{car.carburant}}</p>-->
+<!--                            </div>-->
+<!--                            <div class="modal-footer">-->
+<!--                            <a href="#!" class="modal-close waves-effect black-text waves-green btn-flat">Return</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+                        </div>
+
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col s12 m12 l12 xl12 ">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d87839.09959525487!2d6.582455223071494!3d46.528458625894665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c293ecd89a7e5%3A0xeb173fc9cae2ee5e!2sLausanne!5e0!3m2!1sfr!2sch!4v1634905474812!5m2!1sfr!2sch" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+<!--<div class="carousel carousel-slider col s12 m12 l12 xl12">-->
+<!--    <div class="carousel-fixed-item center">-->
+<!--        <a class="btn waves-effect white grey-text darken-text-2">button</a>-->
+<!--    </div>-->
+<!--    {% for car in cars %}-->
+<!--        <div class="carousel-item white-text" href="{% url 'customer:create_reservation_from_customer' car_pk=car.pk %}">-->
+<!--            <h2 class="center">{{car.model}}</h2>-->
+<!--            <img src="{{car.image1}}" id="homepage_slider">-->
+<!--            <p class="white-text">{{car.description}}</p>-->
+<!--        </div>-->
+<!--    {% endfor %}-->
+<!--</div>-->

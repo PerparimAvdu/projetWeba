@@ -1,0 +1,156 @@
+{% extends 'home/header.html' %}
+{% load static %}
+<!-- this template belong to hanefi -->
+{% block content %}
+
+<div class="row container">
+    <div class="col s12 m12 l12 xl12 center">
+      <div class="card white darken-1">
+        <div class="card-content black-text">
+
+        <!-- Form with no modelForm -->
+        <form action="" method="post" onsubmit="myButton.disabled=true;return true;">
+            {% csrf_token %}
+
+            <div class="progress">
+                <div class="determinate blue" id="semi_determinate_bar"></div>
+            </div>
+
+            <h3>Customer and Car selection</h3>
+
+            <div class="input-field col s12">
+                <select name="customer_id">
+                    {% for customer in customers %}
+                        <option value="{{customer.id}}">{{customer.email}}</option>
+                    {% endfor %}
+                </select>
+                <label>Customer</label>
+            </div>
+
+            <div class="input-field col s12">
+                <select name="car_id">
+                    {% for car in cars %}
+                        <option value="{{car.id}}">{{car.model}}</option>
+                    {% endfor %}
+                </select>
+                <label>Cars</label>
+            </div>
+
+            <br>
+
+            <div class="card-action">
+                <input type="submit" name="myButton" value="Continue" class="btn white black-text waves-effect waves-green">
+
+                <a href="{% url 'reservations_management:dashboard' %}" class="btn white black-text waves-effect waves-green">Cancel</a>
+            </div>
+
+        </form>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+
+
+
+            <!--
+            <h3>No modelform only manual form</h3>
+            <h5>Method 1 Static</h5>
+            {% for price in prices %}
+            <label>
+                 <input name="hours_kms_price" type="radio" value="{{price.price_category.hours}} {{price.price_category.kms}} {{price.car_price}}"/>
+                <span>{{price.price_category.hours}} hours for {{price.price_category.kms}} {{price.car_price}} CHF </span>
+            </label>
+            <br>
+            {% endfor %}
+            <br>
+
+            <h5>Method 2 Semi-Static</h5>
+            {% for price in prices %}
+            <label>
+                 <input name="hours" type="radio" value="{{price.price_category.hours}}"/>
+                <span>{{price.price_category.hours}}</span>
+            </label>
+
+            <label>
+                 <input name="kms" type="radio" value="{{price.price_category.kms}}"/>
+                <span>{{price.price_category.kms}} / {{price.car_price}} CHF</span>
+            </label>
+            <br>
+            {% endfor %}
+
+            <h5>Method 3 Dynamic</h5>
+            {% for car in cars %}
+                <label>
+                    <input name="cars" type="radio" value="{{car.model}}"/>
+                    <span>{{car.model}}</span>
+                </label>
+                {% for price in prices %}
+            <label>
+                <input name="hours" type="radio" value="{{price_cat.hours}}"/>
+                <span>{{price.price_category.hours}}hours</span>
+            </label>
+
+            <label>
+                <input name="kms" type="radio" value="{{price_cat.kms}}"/>
+                <span>{{price.price_category.kms}}</span>
+            </label>
+
+            <label>
+                <input name="price" type="radio" value="{{price.car_price}}"/>
+                <span>{{price.car_price}}CHF</span>
+            </label>
+                {% endfor %}
+            <br>
+            {% endfor %}
+
+            <h5>Method 4 Semi-Dynamic</h5>
+            {% for car in cars %}
+                <label>
+                    <input name="cars" type="radio" value="{{car.model}}"/>
+                    <span>{{car.model}}</span>
+                </label>
+                {% for price_cat in prices_cat %}
+                    <label>
+                        <input name="hours" type="radio" value="{{price_cat.hours}}{{price_cat.kms}} "/>
+                        <span>{{price_cat.hours}} for {{price_cat.kms}}</span>
+                    </label>
+                {% endfor %}
+            <br>
+            {% endfor %}
+
+            <h5>Method 5 Semi-Dynamic</h5>
+            {% for car in cars %}
+                <label>
+                    <input name="cars" type="radio" value="{{car.model}}"/>
+                    <span>{{car.model}}</span>
+            {% endfor %}
+            <br>
+                </label>
+            {% for price in prices %}
+                    <label>
+                        <input name="hours" type="radio" value="{{price_cat.hours}}{{price_cat.kms}} "/>
+                        <span>{{price.price_category.hours}} for {{price.price_category.kms}} {{price.car_price}} CHF</span>
+                    </label>
+
+            {% endfor %}
+            <br><br><br>
+            <hr>
+        <input type="submit" name="Submit" class="btn white black-text waves-effect waves-green">
+
+        <a href="{% url 'reservations_management:dashboard' %}" class="btn white black-text waves-effect waves-green">Return to the dashboard</a>
+
+        </form>
+            <br><br><br><br><hr><hr>
+        <h3>Forms with modelForms</h3>
+         Form with modelForm
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            {{formcat.as_p}}
+            {{formprice.as_p}}
+        </form>
+        -->
+

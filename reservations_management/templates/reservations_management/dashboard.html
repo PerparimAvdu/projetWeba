@@ -1,0 +1,80 @@
+{% extends 'home/header.html' %}
+<!-- this template belong to hanefi -->
+{% block content %}
+{% include './includes/status.html' %}
+
+<div class="row">
+
+<div class="col s12 m12 l12 xl12">
+  <div class="card white black-text">
+    <div class="card-content">
+        <span class="card-title center">Recent Reservations</span>
+        <table class="table responsive-table highlight">
+            <thead class="blue">
+                <tr>
+                    <th>Customer</th>
+                    <th>Car</th>
+                    <th>Price</th>
+                    <th>Date Reserved</th>
+                    <th>Status</th>
+<!--                    <th>Note</th>-->
+                    <th>Update</th>
+                    <th>Remove</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            {% for reservation in page_obj_reservations %}
+                <tr>
+                    <td>{{reservation.customer.name}}</td>
+                    <td>{{reservation.car}}</td>
+                    <td>{{reservation.hours_kms_price}}</td>
+                    <td>{{reservation.date_location_start}}</td>
+                    <td>{{reservation.status}}</td>
+<!--                    <td><pre>{{reservation.note|linebreaksbr}}</pre></td>-->
+                    <td><a class="btn white black-text waves-effect waves-green" href="{% url 'reservations_management:update_reservation_from_admin_1' reservation.pk %}">Update</a></td>
+                    <td><a class="btn white black-text waves-effect waves-red" href="{% url 'reservations_management:delete_reservation_from_admin' reservation.id %}">Delete</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="card-action">
+            <a href="{% url 'reservations_management:create_reservation_from_admin_1' %}" class="btn white black-text waves-effect waves-green">Create Reservation</a>
+        </div>
+
+        <div class="center">
+            <ul class="pagination">
+                <span class="step-links">
+
+                {% if page_obj_reservations.has_previous %}
+                    {# whether the previous page exists #}
+                <li><a href="?reservations_page=1" class="waves-effect waves-green">first</a></li>
+
+                <li class="waves-effect waves-green"><a href="?reservations_page={{page_obj_reservations.previous_page_number}}"><i class="material-icons">chevron_left</i></a></li>
+                    {# link to the prev page #}
+                {% endif %}
+
+                <li class="active green"><a href="?reservations_page={{page_obj_reservations.number}}" class="waves-effect waves-green">{{page_obj_reservations.number}}</a></li> {# the current page number #}
+
+                <li> of <a href="?reservations_page={{page_obj_reservations.paginator.num_pages}}" class="waves-effect waves-green">{{page_obj_reservations.paginator.num_pages}}</a></li> {# total page number #}
+
+                {% if page_obj_reservations.has_next %}
+                    {# whether the next page exists #}
+
+                    {# link to the next page #}
+                <li><a href="?reservations_page={{page_obj_reservations.next_page_number}}"><i class="material-icons waves-effect waves-green ">chevron_right</i></a></li>
+
+                <li><a href="?reservations_page={{page_obj_reservations.paginator.num_pages}}" class="waves-effect waves-green">last</a></li>
+                {% endif %}
+
+                </span>
+            </ul>
+        </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+{% endblock %}

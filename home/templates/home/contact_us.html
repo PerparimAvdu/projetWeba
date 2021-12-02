@@ -1,0 +1,68 @@
+{% extends './header.html' %}
+{% load static %}
+<!-- this template belong to adam -->
+{% block content %}
+
+<div class="row container">
+    <div class="col s12 m7 l12 xl12">
+        <div class="card white darken-1">
+            <div class="card-content black-text">
+                <span class="card-title center">Contact us</span>
+                <form method="POST" onsubmit="myButton.disabled=true;return true;">
+
+                    {% csrf_token %}
+
+                    <div class="row">
+                        <div class="input-field col s12 m12 l6 xl6">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="icon_prefix" type="text" name="name" class="validate" required>
+                            <label for="icon_prefix">First Name</label>
+                        </div>
+
+                        <div class="input-field col s12 m12 l6 xl6">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="icon_telephone" type="tel" name="phone" class="validate">
+                            <label for="icon_telephone">Telephone</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12 m12 l12 xl12">
+                            <i class="material-icons prefix">contact_mail</i>
+                            <input id="email" type="email" name="email" class="validate" required>
+                            <label for="email">Email</label>
+                            <span class="helper-text" data-error="Invalid e-mail" data-success=""></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12 m12 l12 xl12">
+                            <i class="material-icons prefix">mode_edit</i>
+                            <textarea id="message" name="message" class="materialize-textarea validate" required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                    </div>
+
+                    <div class="card-action center">
+                        <input type="submit" value="Send" class="btn white black-text waves-effect waves-green" name="myButton">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row container white-text">
+    <div class="col s12 m7 l7 xl12">
+        <table>
+            <tr>
+                <td><i class="material-icons">phone</i> Call us<br>+41 79 373 44 44</td>
+                <td><i class="material-icons">phone</i> Message Us<br>info@44location.ch</td>
+            </tr>
+    </table>
+    </div>
+</div>
+
+{% endblock content %}

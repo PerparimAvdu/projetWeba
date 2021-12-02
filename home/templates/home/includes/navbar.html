@@ -1,0 +1,124 @@
+{% load active_link_tags %}
+{% load static %}
+
+
+<title>44location</title>
+
+<div class="navbar-fixed">
+  <nav>
+  <div class="nav-wrapper ">
+
+    <a href="/" class="brand-logo"><img src="{% static '/images/logo-44location.png' %}" id="logo"></a>
+
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <!-- normal navbar -->
+      <ul class="right hide-on-med-and-down">
+        {% if user.is_authenticated and not request.user.is_staff  %}
+
+          {% url 'customer:user_settings' request.user.customer.id as url %}
+          <li class="{% if request.path == url %}my_custom_active_link{% endif %}"><a href="{{url}}" >Connected as :  {{user.username}}</a></li>
+
+          {% url 'customer:customer_dashboard' request.user.customer.pk as url %}
+          <li class="{% if request.path == url %}my_custom_active_link{% endif %}"><a href="{{url}}" class="{% active_link 'customer:customer_dashboard'  'my_custom_active_link' strict=True %}">My reservation</a></li>
+
+          {% url 'cars:all_cars' as url %}
+          <li class="{% if request.path == url %}my_custom_active_link{% endif %}"><a href="{{url}}">Cars</a></li>
+
+          {% url 'home:about_us' as url %}
+          <li class="{% if request.path == url %}my_custom_active_link{% endif %}"><a href="{{url}}">About us</a></li>
+
+          {% url 'home:contact_us' as url %}
+          <li class="{% if request.path == url %}my_custom_active_link{% endif %}"><a href="{{url}}">Contact</a></li>
+
+          <li class="{% active_link 'logout' 'my_custom_active_link' %}"><a href="{% url 'logout' %}">Logout</a></li>
+
+        {% elif user.is_authenticated and request.user.is_staff %}
+
+          {% url 'home:homepage' as url %}
+          <li class="{% if request.path == url %}my_custom_active_link{% endif %}"><a href="{{url}}">Admin : {{user.username}}</a></li>
+
+          {% url 'reservations_management:dashboard' as url %}
+          <li class="{% if request.path == url %}my_custom_active_link{% endif %}"><a href="{{url}}">Dashboard</a></li>
+
+          {% url 'cars:all_cars' as url %}
+          <li class="{% if request.path == url %}my_custom_active_link{% endif %}"><a href="{{url}}">Cars</a></li>
+
+          {% url 'reservations_management:all_customers_from_admin' as url %}
+          <li class="{% if request.path == url %}my_custom_active_link{% endif %}"><a href="{% url 'reservations_management:all_customers_from_admin' %}">Customers</a></li>
+
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+
+        {% else %}
+
+          {% url 'cars:all_cars' as url %}
+          <li class="{% if request.path == url %}my_custom_active_link{% endif %}"><a href="{{url}}">Cars</a></li>
+
+          {% url 'home:about_us' as url %}
+          <li class="{% if request.path == url %}my_custom_active_link{% endif %}"><a href="{{url}}">About us</a></li>
+
+          {% url 'home:contact_us' as url %}
+          <li class="{% if request.path == url %}my_custom_active_link{% endif %}"><a href="{{url}}">Contact</a></li>
+
+          {% url 'login' as url %}
+          <li class="{% if request.path == url %}my_custom_active_link{% endif %}"><a href="{% url 'login' %}">Login</a></li>
+
+          {% url 'register' as url %}
+          <li class="{% if request.path == url %}my_custom_active_link{% endif %}"><a href="{{url}}">Register</a></li>
+        {% endif %}
+    </ul>
+
+  </div>
+  </nav>
+</div>
+
+  <!-- sidenav -->
+  <ul class="sidenav" id="mobile-demo">
+      {% if user.is_authenticated and not request.user.is_staff  %}
+        <li><a href="{% url 'customer:user_settings' request.user.customer.id %}" class="btn white black-text waves-effect waves-green">Connected as :  {{user.username}}</a></li>
+        <li><a href="{% url 'customer:customer_dashboard' customer_pk=request.user.customer.pk %}" class="btn white black-text waves-effect waves-green">My reservation</a></li>
+        <li><a href="{% url 'cars:all_cars' %}" class="btn white black-text waves-effect waves-green">Cars</a></li>
+        <li><a href="{% url 'home:about_us' %}" class="btn white black-text waves-effect waves-green">About us</a></li>
+        <li><a href="{% url 'home:contact_us' %}" class="btn white black-text waves-effect waves-green">Contact</a></li>
+        <li><a href="{% url 'logout' %}" class="btn white black-text waves-effect waves-green">Logout</a></li>
+
+      {% elif user.is_authenticated and request.user.is_staff %}
+
+        <li>Admin : {{user.username}}</li>
+
+        <li><a href="{% url 'reservations_management:dashboard' %}" class="btn white black-text waves-effect waves-green" class="btn white black-text waves-effect waves-green">Dashboard</a></li>
+
+        <li><a href="{% url 'cars:all_cars' %}" class="btn white black-text waves-effect waves-green" class="btn white black-text waves-effect waves-green">Cars</a></li>
+
+        <li><a href="{% url 'reservations_management:all_customers_from_admin' %}" class="btn white black-text waves-effect waves-green">Customers</a></li>
+
+        <li><a href="{% url 'logout' %}" class="btn white black-text waves-effect waves-green">Logout</a></li>
+
+      {% else %}
+
+        <li><a href="{% url 'cars:all_cars' %}" class="btn white black-text waves-effect waves-green">Cars</a></li>
+
+        <li><a href="{% url 'home:about_us' %}" class="btn white black-text waves-effect waves-green">About us</a></li>
+
+        <li><a href="{% url 'home:contact_us' %}" class="btn white black-text waves-effect waves-green">Contact</a></li>
+
+        <li><a href="{% url 'login' %}" class="btn white black-text waves-effect waves-green">Login</a></li>
+
+        <li><a href="{% url 'register' %}" class="btn white black-text waves-effect waves-green">Register</a></li>
+      {% endif %}
+  </ul>
+
+
+<!--This was for the active link nav with javascript didn't work-->
+<!--  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>-->
+
+<!--  <script type="text/javascript">-->
+<!--      $(document).on('click', 'ul li', function(e){-->
+<!--          e.preventDefault();-->
+<!--          $(this).addClass('bobop').siblings.removeClass('bobop');-->
+<!--      })-->
+<!--  </script>-->
+
+
+
+
+

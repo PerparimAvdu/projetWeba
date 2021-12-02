@@ -1,0 +1,32 @@
+[
+  {
+    "model": "reservations_management.reservation",
+    "pk": 1,
+    "fields": {
+      "status": "Confirmed",
+      "note": "this client is good",
+      "date_location_start": "2021-01-01",
+      "hours_kms_price": "4h 150kms 180 Chf"
+    }
+  },
+    {
+    "model": "reservations_management.reservation",
+    "pk": 2,
+    "fields": {
+      "status": "Pending",
+      "note": "this client is maybe good",
+      "date_location_start": "2021-5-5",
+      "hours_kms_price": "4h Illimited kms 300 Chf"
+    }
+  },
+    {
+    "model": "reservations_management.reservation",
+    "pk": 3,
+    "fields": {
+      "status": "Canceled",
+      "note": "this client is not good",
+      "date_location_start": "2021-10-10",
+      "hours_kms_price": "6h 200 kms 250 Chf"
+    }
+  }
+]

@@ -1,0 +1,324 @@
+/*
+#car_image_reservation{
+    width: 45%;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    border: solid 10px black;
+}
+*/
+
+html{
+    font-size: 15px;
+    height: 100%; /* if i put this everthing fucked up */
+}
+
+body{
+   /* height: 100%; not working */
+    background: black;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/*
+header{
+    height: 10%;  not working until the html tag is put on 100%
+}
+*/
+
+main{
+    height: 68%;  /* not working until the html tag is put on 100% */
+    flex: 1 0 auto;
+    margin-top: 4%;
+}
+
+footer{
+    height: 12%; /* not working until the html tag is put on 100% */
+}
+
+nav ul a{
+    font-size: x-large;
+    margin-top: 14px;
+}
+
+nav a{
+    font-size: x-large;
+    margin-top: 14px;
+}
+
+nav .nav-wrapper{
+    font-size: x-large;
+    background: black !important;
+    height: 100px !important;
+}
+
+
+nav ul li a:hover{
+    /* color:rgb(43,99,230); */
+    color: blue;
+    background-color: white !important;
+    font-size: 2rem;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+/* the problem is coming from the href maybe django ? yes it was but it work now. */
+nav ul li.my_custom_active_link a{
+    color:green !important;
+    background-color: white !important;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+/* this is another way to do active link but not working
+nav ul li a.my_custom_active_link{
+    color:green !important;
+    background-color: white !important;
+}
+*/
+
+/* after clicked on a link and release
+nav ul a:target{
+    color: red !important;
+}
+*/
+
+#logo{
+    width: 120px;
+    height: 70px;
+    padding-top: 0px;
+    margin-top:6px;
+    margin-left: 300px
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+#home_model_car{
+    position: absolute;
+    right: 20%;
+    width: 100%;
+    height: 100px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 3em;
+    font-weight: bold;
+    color: black;
+
+}
+
+/*
+input[type="textfield"]{
+    padding: 10px 10px 10px 10px;
+    line-height: 28px;
+    width: 80%;
+}
+*/
+
+p{
+    font-size: 15px;
+}
+
+#full_determinate_bar{
+    width: 100%;    /* progress bar */
+
+}
+
+#semi_determinate_bar{
+    width: 50%      /* progress bar */
+}
+
+/* background for contact us form
+.imageaboutus{
+     background: url("/static/images/koe.jpg") 100% 0  no-repeat fixed;
+     color: white;
+     height: 650px;
+     padding: 100px 0 0 0;
+ }
+*/
+
+/*
+#third{
+  background: url('{{ STATIC_URL }}home/aboutuss.jpg')
+}
+*/
+
+/*
+label, input {
+    font-size: large;
+}
+*/
+
+/*
+input, textarea {
+    font-style: italic;
+}
+*/
+
+
+#slider_height{
+    height: 700px !important; /* not working */
+}
+
+#reserve_button_homepage{
+    margin-top: 370px;
+}
+
+#promotion_car{
+    text-align: center;
+    margin: auto;
+}
+
+/* for the images in cars */
+#image_ajustement{
+    height: 200px;  /* problem with the size */
+}
+
+/* this is when you click on details for a car */
+#modal-pop{
+    width: 50%; /* not used finally */
+}
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+ color: green;
+}
+
+/* label color */
+.input-field {
+     color: black !important;
+}
+
+/* for the select options */
+ul.dropdown-content.select-dropdown li span {
+    color: black; /* no need for !important :) */
+}
+
+/* label focus color */
+.input-field textarea[id=textarea1]:focus + label {
+    color: black;
+}
+
+/* label underline focus color */
+.input-field textarea[id=textarea1]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+}
+
+/* label underline focus color not working for datefield */
+.input-field input[name=date_location_start]:focus {
+     border-bottom: 1px solid #000 !important;
+     box-shadow: 0 1px 0 0 #000 !important;
+}
+
+/* label focus color on contact us */
+.input-field textarea[id=message]:focus + label {
+    color: black;
+}
+
+/* label underline focus color on contact us */
+.input-field textarea[id=message]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+}
+
+/* label focus color on contact us */
+.input-field input[type=text]:focus + label {
+    color: black !important;
+}
+
+/* label underline focus color on contact us */
+.input-field input[type=text]:focus {
+     border-bottom: 1px solid #000 !important;
+     box-shadow: 0 1px 0 0 #000 !important;
+}
+
+/* label focus color on contact us */
+.input-field input[type=tel]:focus + label {
+    color: black !important;
+}
+
+/* label underline focus color on contact us */
+.input-field input[type=tel]:focus {
+     border-bottom: 1px solid #000 !important;
+     box-shadow: 0 1px 0 0 #000 !important;
+}
+
+/* label focus color on contact us */
+.input-field input[type=email]:focus + label {
+    color: black !important;
+}
+
+/* label underline focus color on contact us */
+.input-field input[type=email]:focus {
+     border-bottom: 1px solid #000 !important;
+     box-shadow: 0 1px 0 0 #000 !important;
+}
+
+#id_status{
+    width:50% ;
+}
+
+/* label underline focus color on admin reservation form */
+.underline_for_admin_form_text input[type=text]:focus {
+     border-bottom: 1px solid #000 !important;
+     box-shadow: 0 1px 0 0 #000 !important;
+}
+
+/* label underline focus color on admin reservation form */
+.underline_for_admin_form_date input[name=date_location_start]:focus {
+     border-bottom: 1px solid #000 !important;
+     box-shadow: 0 1px 0 0 #000 !important;
+}
+
+/* on admin reservation form */
+.status_reservation_admin select[name='status']{
+    width:30% !important;   /* not working */
+}
+
+/* on admin reservation form */
+.note_reservation_admin input[name='note']{
+    width:100% ;
+}
+
+/* on admin reservation form */
+.date_reservation_admin input[type='datetime-local']{
+    width:80% ;
+}
+
+.car_update_customer input[type='text']{
+    width: 20% !important;
+    margin: auto;
+    text-align: center;
+}
+
+
+/*
+#testmagique input[name='note']{
+    width:20% ;
+}
+*/
+
+/* label underline focus color on every modelform */
+.underline_for_modelform_text input:focus {
+     border-bottom: 1px solid #000 !important;
+     box-shadow: 0 1px 0 0 #000 !important;
+}
+
+
+/*
+.transparentBG{
+    background-color: rgba(0,0,0,0);
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+

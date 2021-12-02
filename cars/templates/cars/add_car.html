@@ -1,0 +1,76 @@
+{% extends 'home/header.html' %}
+<!-- this template belong to adam -->
+{% block content %}
+
+<div class="row">
+  <div class="col s12 m12 l12 xl12">
+    <div class="card white darken-1">
+      <div class="card-content black-text">
+        <span class="card-title">Add Car</span>
+        <form method="post" enctype="multipart/form-data" onsubmit="myButton.disabled=true;return true;">
+        {% csrf_token %}
+        <div class="input-field col s12">
+          <select name="brand">
+            <option value="none">Choose your option</option>
+              {% for brand in brands %}
+            <option value="{{brand.id}}">{{brand.name}}</option>
+          {% endfor %}
+          </select>
+          <label>Brand</label>
+        </div>
+
+        <div class="input-field col s7">
+        <label for="brand_new">Create a new brand</label>
+        <input name="brand_new" id="brand_new" type="text" class="validate">
+        </div>
+
+        <div class="input-field col s5">
+        <label for="model">model</label>
+        <input name="model" id="model" type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+        <label for="max_speed">max_speed</label>
+        <input name="max_speed" id="max_speed" type="text" class="validate">
+        </div>
+
+        <div class="input-field col s8">
+        <label for="buy_date">buy_date</label>
+        <input name="buy_date" placeholder="buy_date" id="buy_date" type="date" class="validate">
+        </div>
+
+        <div class="input-field col s6">
+        <label for="transmission">transmission</label>
+        <input name="transmission" id="transmission" type="text" class="validate">
+        </div>
+
+        <div class="input-field col s6">
+        <label for="carburant">carburant</label>
+        <input name="carburant" id="carburant" type="text" class="validate">
+        </div>
+
+        <div class="input-field col s4">
+        <label for="consumption">consumption</label>
+        <input name="consumption" id="consumption" type="text" class="validate">
+        </div>
+
+
+        <div class="input-field col s8">
+        <label for="description">Description</label>
+        <input name="description" id="description" type="text" class="validate">
+        </div>
+
+        <div class="input-field col s12">
+        <input name="car_image1" id="car_image1" type="file" class="validate">
+        </div>
+
+        <br><br>
+        <button type="submit" class="btn white black-text waves-effect waves-green" name="myButton">Submit</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

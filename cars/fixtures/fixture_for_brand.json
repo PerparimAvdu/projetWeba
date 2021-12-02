@@ -1,0 +1,27 @@
+[
+  {
+    "model": "cars.brand",
+    "pk": 1,
+    "fields": {
+      "name": "Bmw",
+      "brand_image": "bmwlogo.jpg"
+    }
+  },
+    {
+    "model": "cars.brand",
+    "pk": 2,
+    "fields": {
+      "name": "Porsche",
+      "brand_image": "porsche-logo.jpg"
+    }
+  },
+    {
+    "model": "cars.brand",
+    "pk": 3,
+    "fields": {
+      "name": "Mercedes",
+      "brand_image": "Mercedes-logo.jpg"
+    }
+  }
+
+]
