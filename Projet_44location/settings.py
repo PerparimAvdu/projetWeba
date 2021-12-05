@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Projet_44location.wsgi.application'
+WSGI_APPLICATION = 'perparimavdu.wsgi.application'
 
 
 # Database
