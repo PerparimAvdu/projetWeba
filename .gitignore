@@ -12,7 +12,7 @@ venv/
 db.sqlite3
 
 # Dossier "static" à la racine du projet
-/static/
+/staticfiles/
 
 # macOS
 ._*
