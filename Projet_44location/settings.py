@@ -26,7 +26,7 @@ SECRET_KEY = '86b9858ae3a91eed085af21d57f3cb631e5cf03c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'perparimavdu.eu.pythinanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'perparimavdu.eu.pythonanywhere.com']
 
 
 # Application definition
@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'perparimavdu.wsgi.application'
+WSGI_APPLICATION = 'Projet_44location.wsgi.application'
 
 
 # Database
