@@ -78,7 +78,7 @@
             {% if not user.is_staff %}
                 <a href="{% url 'customer:create_reservation_from_customer' car_pk=car.pk %}" class="btn white black-text waves-effect waves-green">Reserve</a>
             {% endif %}
-
+            <a href="" id="zoom" class="btn white black-text waves-effect waves-green">zoom</a>
           {% if user.is_authenticated and request.user.is_staff %}
               <a href="{% url 'cars:update_car' car.id %}" class="btn collection-item active white darken-1 black-text waves-effect waves-green">Update</a>
 
@@ -94,5 +94,26 @@
     </div>
 
 </div>
+<script type="text/javascript">
 
+      // Récuperation de l'image
+      var img = document.getElementsByClassName('carousel carousel-slider')
+      // Function qui aggrandit l'image
+      function enlargeImg() {
+        // zoom de 1.5
+        img.style.transform = "scale(1.5)";
+        // Effet d'animation
+        img.style.transition = "transform 0.25s ease";
+      }
+      // Function pour remettre l'image à sa taille initiale
+      function resetImg() {
+
+        img.style.transform = "scale(1)";
+        img.style.transition = "transform 0.25s ease";
+      }
+
+      document.getElementById('zoom').addEventListener('click', enlargeImg)
+      //document.getElementById('zoom').addEventListener('click', resetImg)
+
+</script>
 {% endblock %}
