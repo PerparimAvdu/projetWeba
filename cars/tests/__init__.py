@@ -1,0 +1,1 @@
+from cars.models import Car

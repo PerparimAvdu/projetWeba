@@ -98,3 +98,10 @@ def delete_car(request, pk):
     context = {'car': car}
     return render(request, 'cars/delete_car.html', context)
 
+
+def article(request):
+    art = Article.objects.all()
+    context = {'article': art}
+
+    return render(request, 'cars/article.html', context)
+

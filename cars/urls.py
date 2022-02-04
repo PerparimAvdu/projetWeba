@@ -10,5 +10,5 @@ urlpatterns = [
     path('add_car/', views.add_car, name='add_car'),
     path('update_car/<str:pk>/', views.update_car, name='update_car'),
     path('delete_car/<str:pk>/', views.delete_car, name='delete_car'),
-
+    path('article/', views.article, name='article')
 ]

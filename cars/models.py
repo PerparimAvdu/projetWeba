@@ -5,6 +5,11 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 
+class Article(models.Model):
+    Titre = models.CharField(max_length=100, null=True, blank=True)
+    Texte = models.TextField(null=True, blank=True)
+
+
 class Brand(models.Model):
     name = models.CharField(max_length=200)
     brand_image = models.ImageField(null=True, blank=True)

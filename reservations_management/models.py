@@ -1,12 +1,7 @@
 from django.db import models
-from django.forms import DateInput
 from django.utils import timezone
 from customer.models import Customer
 from cars.models import Car
-from django.core.validators import RegexValidator
-from datetime import datetime
-from django.utils.translation import ugettext_lazy as _
-
 
 STATUS = [
     ('Confirmed', 'Confirmed'),

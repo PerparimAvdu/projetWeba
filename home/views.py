@@ -1,14 +1,7 @@
-import datetime
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from .models import *
-from django.contrib.auth.decorators import login_required
-from django.utils import timezone
-from django.forms import inlineformset_factory
-from django.urls import reverse
 from cars.models import Car
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings

@@ -1,10 +1,8 @@
 from django.forms import *
-from cars.models import *
+
+from cars.models import Price_category, Price
 from .models import *
-from django.contrib.auth.forms import UserCreationForm
 from django import forms
-from django.contrib.auth.models import User
-from django.forms.widgets import NumberInput
 
 
 class ReservationFormFromAdmin1(ModelForm):

@@ -1,8 +1,7 @@
 import datetime
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import logout
 from django.contrib import messages
 from reservations_management.filters import ReservationFilter
 from login_settings.decorators import allowed_user
@@ -10,14 +9,11 @@ from cars.models import Car, Price
 from .forms import *
 from .models import *
 from django.contrib.auth.decorators import login_required
-from django.utils import timezone
-from django.forms import inlineformset_factory
-from django.urls import reverse
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.core.mail import send_mail, BadHeaderError
-from django.utils.translation import ugettext_lazy as _
-from django.core.exceptions import ValidationError
+
+
 # from utils import date     dont work the thing with the date mock
 
 

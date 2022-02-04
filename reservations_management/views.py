@@ -1,18 +1,13 @@
 from django.core.mail import send_mail, BadHeaderError
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from cars.models import Price, Price_category
+from cars.models import Price
 from login_settings.decorators import admin_only, allowed_user
 from customer.forms import NewUserForm
-from .models import *
 from .forms import *
-from django.forms import inlineformset_factory
 from .filters import *
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import Group
 from django.core.paginator import Paginator
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags

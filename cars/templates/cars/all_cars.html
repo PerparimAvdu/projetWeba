@@ -1,5 +1,5 @@
 {% extends 'home/header.html' %}
-<!-- this template belong to adam -->
+
 {% block content %}
 
 <div class="row">
@@ -38,7 +38,7 @@
         <div class="card-image">
 <!--          <img class="responsive-img" src="{{car.image1}}" id="image_ajustement">-->
             <div class="carousel carousel-slider">
-                <a class="carousel-item"><img src="{{car.image1}}" class="responsive-img"></a>
+                <a class="carousel-item"><img id="imageVoiture{{forloop.counter}}" src="{{car.image1}}" class="responsive-img"></a>
                 <a class="carousel-item"><img src="{{car.image2}}" class="responsive-img"></a>
 
                 <a class="carousel-item"><img src="{{car.image3}}" class="responsive-img"></a>
@@ -78,7 +78,7 @@
             {% if not user.is_staff %}
                 <a href="{% url 'customer:create_reservation_from_customer' car_pk=car.pk %}" class="btn white black-text waves-effect waves-green">Reserve</a>
             {% endif %}
-            <a href="" id="zoom" class="btn white black-text waves-effect waves-green">zoom</a>
+            <button id="zoom{{forloop.counter}}" class="btn white black-text waves-effect waves-green">zoom</button>
           {% if user.is_authenticated and request.user.is_staff %}
               <a href="{% url 'cars:update_car' car.id %}" class="btn collection-item active white darken-1 black-text waves-effect waves-green">Update</a>
 
@@ -95,25 +95,36 @@
 
 </div>
 <script type="text/javascript">
+      var nb_voit = {{cars|length}};
+      //console.log(nb_voit);
 
       // Récuperation de l'image
-      var img = document.getElementsByClassName('carousel carousel-slider')
+      var img = document.getElementById('imageVoiture');
       // Function qui aggrandit l'image
-      function enlargeImg() {
+      function enlargeImg(i) {
         // zoom de 1.5
+        var img = document.getElementById('imageVoiture' + i);
+        var btn = document.getElementById('zoom'+i);
+        //console.log(img.style.transform);
+
+        if (img.style.transform == "scale(1.5)")
+        {
+        img.style.transform = "scale(1)";
+        btn.textContent = "zoom"
+        }
+        else
+        {
         img.style.transform = "scale(1.5)";
+        btn.textContent = "dézoomer"
+        }
         // Effet d'animation
         img.style.transition = "transform 0.25s ease";
       }
-      // Function pour remettre l'image à sa taille initiale
-      function resetImg() {
-
-        img.style.transform = "scale(1)";
-        img.style.transition = "transform 0.25s ease";
-      }
-
-      document.getElementById('zoom').addEventListener('click', enlargeImg)
-      //document.getElementById('zoom').addEventListener('click', resetImg)
+      for (let i = 1; i < nb_voit; i++) {
+        document.getElementById('zoom'+i).addEventListener('click', function(){
+        enlargeImg(i);
+        })
+       }
 
 </script>
 {% endblock %}

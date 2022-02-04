@@ -1,0 +1,35 @@
+{% extends 'home/header.html' %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col s8 m6 l3 xl3">
+        <div class="card hoverable white darken-1">
+            <div class=card-content black-text">
+            {% for a in article %}
+                <div class="col s24 m24 l12 x8">
+                    <div class="card medium hoverable">
+                        <div class="card-image">
+                            <div class="carousel carousel-slider">
+                                <h2>{{ a.Titre }}</h2>
+                                <br>
+                                <br>
+                                {{ a.Texte }}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+            <button>Retour</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

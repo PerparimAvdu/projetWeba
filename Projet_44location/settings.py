@@ -29,6 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'perparimavdu.eu.pythonanywhere.com']
 
 
+
+
 # Application definition
 
 INSTALLED_APPS = [
