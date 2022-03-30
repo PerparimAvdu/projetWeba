@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
 from .models import *
 from cars.models import Car
@@ -59,6 +59,14 @@ def contact_us(request):
         return redirect('home:homepage')
 
     return render(request, 'home/contact_us.html')
+
+def recherche(request, insert):
+    cars = Brand.objects.filter(name__icontains=insert)
+    items = {"item": []}
+    for car in cars:
+        items["item"].append(car.name)
+    time.sleep(5)
+    return JsonResponse({'items': items})
 
 
 # Another way to send mail
